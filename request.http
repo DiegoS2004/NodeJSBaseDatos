@@ -1,0 +1,16 @@
+###
+
+POST http://localhost:5000/api/users HTTP/1.1
+Content-Type: application/json
+
+{
+    "name": "Mauricio Lozano",
+    "email": "maurilozano@neoris.com",
+    "password": "password23",
+    "rol": "admin"
+}
+
+
+###
+GET http://localhost:5000/api/users HTTP/1.1
+
