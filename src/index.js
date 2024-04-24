@@ -13,8 +13,7 @@ const port = process.env.PORT || 1500;
 
 // Middleware
 app.use(cors());
-app.use(express.json()); // Configura el middleware express.json() para analizar el cuerpo de la solicitud como JSON
-
+app.use(express.json()); 
 // Rutas
 app.use('/api', usersRoutes);
 app.use('/api/slimes', slimesRouter);
