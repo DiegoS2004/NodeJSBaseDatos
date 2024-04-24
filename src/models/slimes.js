@@ -7,10 +7,12 @@ const slimeSchema = new mongoose.Schema({
     },
     rareza: {
         type: String,
+        enum: ['comun', 'raro', 'epico', 'legendario'], 
         required: true
     },
-    habilidades: {
-        type: String
+    imagen: {
+        data: Buffer,
+        contentType: String
     }
 });
 
