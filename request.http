@@ -1,11 +1,12 @@
 ###
 
-POST http://localhost:1500/api/slimes HTTP/1.1
+POST http://localhost:1500/api/users HTTP/1.1
 Content-Type: application/json
 
 {
-    "nombre": "Cloud Slime",
-    "rareza": "legendario"
+    "name": "Cloud Slime",
+    "email": "uwu@yahho.com",
+    "password": "dig bick"
 }
 
 

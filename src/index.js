@@ -3,6 +3,7 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 const usersRoutes = require("./routes/users");
 const slimesRouter = require('./routes/slimes');
+const User = require('./models/users');
 
 const multer = require('multer');
 const upload = multer({ dest: 'uploads/' });
@@ -23,17 +24,29 @@ app.get('/', (req, res) => {
     res.send('Bienvenido a mi API');
 });
 
-//imagenes
-app.post('/imagen', upload.single('imagen'), function (req,res){
+// Ruta para crear un nuevo usuario
+app.post('/api/users', (req, res) => {
+    // Obtener los datos del cuerpo de la solicitud
+    const { name, email, password } = req.body;
 
-    const body = req.body;
-    const imagen = req.file;
+    // Validar los datos del formulario
+    if (!name || !email || !password) {
+        return res.status(400).json({ message: 'Todos los campos son obligatorios' });
+    }
 
-    console.log(imagen);
+    // Crear un nuevo usuario
+    const newUser = new User({ name, email, password });
 
-    res.send('POST para subir imagen')
+    // Guardar el usuario en la base de datos
+    newUser.save()
+        .then(user => {
+            res.status(201).json(user); // Enviar una respuesta con el usuario creado
+        })
+        .catch(error => {
+            console.error(error);
+            res.status(500).json({ message: 'Error interno del servidor' });
+        });
 });
-
 
 // Conexión a la base de datos
 mongoose.connect(process.env.MONGODB_URI)
