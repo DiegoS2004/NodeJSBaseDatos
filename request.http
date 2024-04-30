@@ -1,16 +1,17 @@
 ###
 
-POST http://localhost:5000/api/users HTTP/1.1
+POST http://localhost:1500/api/users
 Content-Type: application/json
 
 {
-    "name": "Mauricio Lozano",
-    "email": "maurilozano@neoris.com",
-    "password": "password23",
-    "rol": "admin"
+    "name": "Jaime Espinosa",
+    "email": "jimmyespinosa@gmail.com",
+    "password": "Rayados22",
+    "rol": "estudiante"
 }
 
 
+
 ###
-GET http://localhost:5000/api/users HTTP/1.1
+GET http://localhost:1500/api/users HTTP/1.1
 
