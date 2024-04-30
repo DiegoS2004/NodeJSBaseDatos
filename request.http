@@ -1,12 +1,13 @@
 ###
 
-POST http://localhost:1500/api/users HTTP/1.1
+POST http://localhost:1500/api/users
 Content-Type: application/json
 
 {
-    "name": "Cloud Slime",
-    "email": "uwu@yahho.com",
-    "password": "dig bick"
+    "name": "Jaime Espinosa",
+    "email": "jimmyespinosa@gmail.com",
+    "password": "Rayados22",
+    "rol": "estudiante"
 }
 
 

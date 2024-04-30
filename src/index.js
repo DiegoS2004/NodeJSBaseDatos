@@ -24,29 +24,6 @@ app.get('/', (req, res) => {
     res.send('Bienvenido a mi API');
 });
 
-// Ruta para crear un nuevo usuario
-app.post('/api/users', (req, res) => {
-    // Obtener los datos del cuerpo de la solicitud
-    const { name, email, password } = req.body;
-
-    // Validar los datos del formulario
-    if (!name || !email || !password) {
-        return res.status(400).json({ message: 'Todos los campos son obligatorios' });
-    }
-
-    // Crear un nuevo usuario
-    const newUser = new User({ name, email, password });
-
-    // Guardar el usuario en la base de datos
-    newUser.save()
-        .then(user => {
-            res.status(201).json(user); // Enviar una respuesta con el usuario creado
-        })
-        .catch(error => {
-            console.error(error);
-            res.status(500).json({ message: 'Error interno del servidor' });
-        });
-});
 
 // Conexión a la base de datos
 mongoose.connect(process.env.MONGODB_URI)
