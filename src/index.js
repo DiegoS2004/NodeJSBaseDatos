@@ -8,6 +8,7 @@ const { MongoClient } = require('mongodb'); // Importa MongoClient de mongodb
 const multer = require('multer');
 const upload = multer({ dest: 'uploads/' });
 require("dotenv").config();
+const coursesRoutes = require("./routes/cursos");
 
 const app = express();
 const port = process.env.PORT || 1500;
@@ -19,6 +20,7 @@ app.use(express.json());
 // Rutas
 app.use('/api', usersRoutes);
 app.use('/api/slimes', slimesRouter);
+app.use('/api', coursesRoutes); // Usa las rutas de los cursos en /api/courses
 
 // Ruta de inicio
 app.get('/', (req, res) => {

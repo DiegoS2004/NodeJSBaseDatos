@@ -1,19 +1,24 @@
 const mongoose = require('mongoose');
 
 const courseSchema = new mongoose.Schema({
-    titulo: {
+    tema: {
         type: String,
         required: true
     },
-    descripcion: {
+    nombre: {
         type: String,
         required: true
     },
-    nivel_dificultad: {
+    duracion: {
+        type: String,
+        required: true
+    },
+    nivel: {
         type: String,
         required: true
     }
-});
+    }
+);
 
 const Course = mongoose.model('Course', courseSchema);
 
