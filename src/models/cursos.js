@@ -16,9 +16,16 @@ const courseSchema = new mongoose.Schema({
     nivel: {
         type: String,
         required: true
-    }
-    }
-);
+    },
+    creador: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'User' // Referencia al modelo de Usuario
+    },
+    certificados: [{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Certificate' // Referencia al modelo de Certificado
+    }]
+});
 
 const Course = mongoose.model('Course', courseSchema);
 
