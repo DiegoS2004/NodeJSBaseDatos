@@ -4,9 +4,9 @@ POST http://localhost:1500/api/users
 Content-Type: application/json
 
 {
-    "name": "Jaime Espinosa",
-    "email": "jimmyespinosa@gmail.com",
-    "password": "Rayados22",
+    "name": "Claudio Sabillon",
+    "email": "claudio@neoris.com",
+    "password": "password",
     "rol": "estudiante"
 }
 
