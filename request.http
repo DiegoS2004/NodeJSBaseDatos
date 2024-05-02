@@ -1,17 +1,17 @@
 ###
 
-POST http://localhost:1500/api/users
+POST http://localhost:1500/api/courses
 Content-Type: application/json
 
 {
-    "name": "Claudio Sabillon",
-    "email": "claudio@neoris.com",
-    "password": "password",
-    "rol": "estudiante"
+    "tema": "Prompt Engineering",
+    "nombre": "ChatGPT Complete Course - Prompt Engineering for ChatGPTI",
+    "duracion": "7.5h",
+    "nivel": "Intermedio"
 }
 
 
 
 ###
-GET http://localhost:1500/api/users HTTP/1.1
+GET http://localhost:1500/api/courses HTTP/1.1
 
